@@ -13,26 +13,13 @@ Majestic Thai is a simple API allowing consumers to view menu items and submit a
 
         [
             {
-                "question": "Favourite programming language?",
-                "published_at": "2015-08-05T08:40:51.620Z",
-                "choices": [
-                    {
-                        "choice": "Swift",
-                        "votes": 2048
-                    }, {
-                        "choice": "Python",
-                        "votes": 1024
-                    }, {
-                        "choice": "Objective-C",
-                        "votes": 512
-                    }, {
-                        "choice": "Ruby",
-                        "votes": 256
-                    }
-                ]
+                "title": "Pad Thai"
             }
         ]
+        
 ## Menu Item [/dishes/{dish_id}]
++ Parameters
+    + dish_id (number) - ID of the Dish in the form of an integer
 
 ### List Details [GET]
 
@@ -40,11 +27,13 @@ Majestic Thai is a simple API allowing consumers to view menu items and submit a
 
         [
             {
-                "_id": "",
-                "description": "",
-                "price": ""
+                "_id": "98347958",
+                "name": "Pad Thai",
+                "description": "Yummy thai food",
+                "price": "$12.00"
             }
         ]
+        
 ## Order Collection [/orders]
 
 ### List All Orders [GET]
@@ -53,26 +42,15 @@ Majestic Thai is a simple API allowing consumers to view menu items and submit a
 
         [
             {
-                "question": "Favourite programming language?",
-                "published_at": "2015-08-05T08:40:51.620Z",
-                "choices": [
-                    {
-                        "choice": "Swift",
-                        "votes": 2048
-                    }, {
-                        "choice": "Python",
-                        "votes": 1024
-                    }, {
-                        "choice": "Objective-C",
-                        "votes": 512
-                    }, {
-                        "choice": "Ruby",
-                        "votes": 256
-                    }
-                ]
+                "time": "2014-11-11T08:40:51.620Z",
+                "user_name": "Padthailover2"
             }
         ]
+        
 ## Order Item [/orders/{order_id}]
++ Parameters
+    + order_id (number) - ID of the Order in the form of an integer
+
 
 ### List All Menu Items [GET]
 
@@ -80,22 +58,20 @@ Majestic Thai is a simple API allowing consumers to view menu items and submit a
 
         [
             {
-                "question": "Favourite programming language?",
-                "published_at": "2015-08-05T08:40:51.620Z",
-                "choices": [
+               "time": "2014-11-11T08:40:51.620Z",
+               "_id":"8457028345",
+                "user_name": "Padthailover2",
+                "total": 3400,
+                "items": [
                     {
-                        "choice": "Swift",
-                        "votes": 2048
-                    }, {
-                        "choice": "Python",
-                        "votes": 1024
-                    }, {
-                        "choice": "Objective-C",
-                        "votes": 512
-                    }, {
-                        "choice": "Ruby",
-                        "votes": 256
-                    }
+                        "name": "Pad Thai",
+                        "descrition": "Yummy thai food",
+                        "price": 900
+                    },{
+                        "name": "Red Curry",
+                        "descrition": "Yummyer thai food",
+                        "price": 1900
+                    },
                 ]
             }
         ]

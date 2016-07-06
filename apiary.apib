@@ -3,11 +3,11 @@ HOST: http://polls.apiblueprint.org/
 
 # Majestic Thai
 
-Polls is a simple API allowing consumers to view polls and vote in them.
+Majestic Thai is a simple API allowing consumers to view menu items and submit an order.
 
-## Questions Collection [/questions]
+## Menu Collection [/dishes]
 
-### List All Questions [GET]
+### List All Menu Items [GET]
 
 + Response 200 (application/json)
 
@@ -32,49 +32,70 @@ Polls is a simple API allowing consumers to view polls and vote in them.
                 ]
             }
         ]
+## Menu Item [/dishes/{dish_id}]
 
-### Create a New Question [POST]
+### List Details [GET]
 
-You may create your own question using this action. It takes a JSON
-object containing a question and a collection of answers in the
-form of choices.
++ Response 200 (application/json)
 
-+ Request (application/json)
+        [
+            {
+                "_id": "",
+                "description": "",
+                "price": ""
+            }
+        ]
+## Order Collection [/orders]
 
-        {
-            "question": "Favourite programming language?",
-            "choices": [
-                "Swift",
-                "Python",
-                "Objective-C",
-                "Ruby"
-            ]
-        }
+### List All Orders [GET]
 
-+ Response 201 (application/json)
++ Response 200 (application/json)
 
-    + Headers
-
-            Location: /questions/2
-
-    + Body
-
+        [
             {
                 "question": "Favourite programming language?",
                 "published_at": "2015-08-05T08:40:51.620Z",
                 "choices": [
                     {
                         "choice": "Swift",
-                        "votes": 0
+                        "votes": 2048
                     }, {
                         "choice": "Python",
-                        "votes": 0
+                        "votes": 1024
                     }, {
                         "choice": "Objective-C",
-                        "votes": 0
+                        "votes": 512
                     }, {
                         "choice": "Ruby",
-                        "votes": 0
+                        "votes": 256
                     }
                 ]
             }
+        ]
+## Order Item [/orders/{order_id}]
+
+### List All Menu Items [GET]
+
++ Response 200 (application/json)
+
+        [
+            {
+                "question": "Favourite programming language?",
+                "published_at": "2015-08-05T08:40:51.620Z",
+                "choices": [
+                    {
+                        "choice": "Swift",
+                        "votes": 2048
+                    }, {
+                        "choice": "Python",
+                        "votes": 1024
+                    }, {
+                        "choice": "Objective-C",
+                        "votes": 512
+                    }, {
+                        "choice": "Ruby",
+                        "votes": 256
+                    }
+                ]
+            }
+        ]
